@@ -1,1 +1,1 @@
-recursive-include assets *
+recursive-include src/pjsk_background_gen_PIL/assets *
