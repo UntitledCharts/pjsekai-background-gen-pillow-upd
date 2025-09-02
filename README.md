@@ -1,21 +1,19 @@
-# pjsekai-background-gen-rust / Rust 版プロセカ風背景生成ツール
+# pjsekai-background-gen-pillow-upd / Python PJSK Stage Background Gen
 
-[pjsekai_background_gen_pillow](https://github.com/sevenc-nanashi/pjsekai_background_gen_pillow)の置き換えです。
-
-## 利用方法
-
-[Releases](https://github.com/sevenc-nanashi/pjsekai-background-gen-rust/releases)から最新のバイナリをダウンロードし、コマンドプロンプトなどで実行してださい。
+[pjsekai_background_gen_rust](https://github.com/sevenc-nanashi/pjsekai_background_gen_rust) but for Python.
 
 ```
-Usage: pjsekai-background-gen FILE [options]
-
-Options:
-    -o NAME             出力先を指定します。
-    -h, --help          ヘルプを表示します。
-    -v, --version VERSION
-                        バージョンを指定します。（1、3）
+Usage: pip install git+https://github.com/YumYummity/pjsekai-background-gen-pillow-upd
 ```
 
-## ライセンス
+```py
+import pjsk_background_gen_PIL as pjsk_bg
 
-ソースコードは GPLv3 で公開されています。
+pjsk_bg.render() # v3 / new ui
+pjsk_bg.render_v3() # v3 / new ui
+pjsk_bg.render_v1() # v1 / old ui
+```
+
+## License
+
+The source code is released under the GPLv3.

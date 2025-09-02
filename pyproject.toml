@@ -1,0 +1,19 @@
+[project]
+name = "pjsk_background_gen_PIL"
+version = "0.1.0"
+description = "pjsekai_background_gen_rust but converted back to Python and Pillow (for v3 background stage support)."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "GPLv3"}
+authors = [{ name = "YumYummity", email = "yumyummity@gmail.com" }]
+
+dependencies = [
+	"pillow",
+	"numpy"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools]
+include-package-data = true
