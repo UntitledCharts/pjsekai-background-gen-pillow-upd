@@ -1,14 +1,17 @@
 from PIL import Image
 from functools import lru_cache
 from dataclasses import dataclass
+from io import BytesIO
 import importlib.resources as pkg_resources
 
 
 def load_image(path: str) -> Image.Image:
-    with pkg_resources.files("pjsk_background_gen_PIL").joinpath("assets", path).open(
-        "rb"
-    ) as f:
-        return Image.open(f).convert("RGBA")
+    file_bytes = (
+        pkg_resources.files("pjsk_background_gen_PIL")
+        .joinpath("assets", path)
+        .read_bytes()
+    )
+    return Image.open(BytesIO(file_bytes)).convert("RGBA")
 
 
 @dataclass
