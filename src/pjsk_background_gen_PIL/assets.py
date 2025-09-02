@@ -37,22 +37,22 @@ class V1Assets:
 @lru_cache(maxsize=1)
 def get_v3_assets() -> V3Assets:
     return V3Assets(
-        base=load_image("../assets/v3/base.png"),
-        bottom=load_image("../assets/v3/bottom.png"),
-        center_cover=load_image("../assets/v3/center_cover.png"),
-        center_mask=load_image("../assets/v3/center_mask.png"),
-        side_cover=load_image("../assets/v3/side_cover.png"),
-        side_mask=load_image("../assets/v3/side_mask.png"),
-        windows=load_image("../assets/v3/windows.png"),
+        base=load_image("v3/base.png"),
+        bottom=load_image("v3/bottom.png"),
+        center_cover=load_image("v3/center_cover.png"),
+        center_mask=load_image("v3/center_mask.png"),
+        side_cover=load_image("v3/side_cover.png"),
+        side_mask=load_image("v3/side_mask.png"),
+        windows=load_image("v3/windows.png"),
     )
 
 
 @lru_cache(maxsize=1)
 def get_v1_assets() -> V1Assets:
     return V1Assets(
-        base=load_image("../assets/v1/base.png"),
-        side_mask=load_image("../assets/v1/side_mask.png"),
-        center_mask=load_image("../assets/v1/center_mask.png"),
-        mirror_mask=load_image("../assets/v1/mirror_mask.png"),
-        frames=load_image("../assets/v1/frames.png"),
+        base=load_image("v1/base.png"),
+        side_mask=load_image("v1/side_mask.png"),
+        center_mask=load_image("v1/center_mask.png"),
+        mirror_mask=load_image("v1/mirror_mask.png"),
+        frames=load_image("v1/frames.png"),
     )
