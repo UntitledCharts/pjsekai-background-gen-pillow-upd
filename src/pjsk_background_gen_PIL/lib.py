@@ -1,5 +1,5 @@
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageEnhance
 
 from .assets import get_v1_assets, get_v3_assets
 
@@ -94,11 +94,12 @@ def mask(image: Image.Image, mask_img: Image.Image) -> Image.Image:
     return Image.fromarray(img_arr, "RGBA")
 
 
-def render(target: Image.Image) -> Image.Image:
-    return render_v3(target)
+def render(target: Image.Image, enhance: bool = True) -> Image.Image:
+    return render_v3(target, enhance=enhance)
 
 
-def render_v3(target: Image.Image) -> Image.Image:
+def render_v3(target: Image.Image, enhance: bool = True) -> Image.Image:
+    target = target.convert("RGBA")
     assets = get_v3_assets()
     base = assets.base.copy()
     width, height = base.size
@@ -140,11 +141,16 @@ def render_v3(target: Image.Image) -> Image.Image:
 
     for img in [side_jackets, assets.side_cover, assets.windows, center, assets.bottom]:
         base.alpha_composite(img)
-
+    if enhance:
+        enhancer = ImageEnhance.Brightness(base)
+        base = enhancer.enhance(1.2)
+        enhancer = ImageEnhance.Color(base)
+        base = enhancer.enhance(1.3)
     return base
 
 
-def render_v1(target: Image.Image) -> Image.Image:
+def render_v1(target: Image.Image, enhance: bool = True) -> Image.Image:
+    target = target.convert("RGBA")
     assets = get_v1_assets()
     base = assets.base.copy()
     width, height = base.size
@@ -176,5 +182,9 @@ def render_v1(target: Image.Image) -> Image.Image:
 
     for img in [side_jackets, center, assets.frames]:
         base.alpha_composite(img)
-
+    if enhance:
+        enhancer = ImageEnhance.Brightness(base)
+        base = enhancer.enhance(1.2)
+        enhancer = ImageEnhance.Color(base)
+        base = enhancer.enhance(1.3)
     return base
