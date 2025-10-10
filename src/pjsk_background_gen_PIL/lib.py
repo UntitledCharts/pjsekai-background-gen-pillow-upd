@@ -145,7 +145,7 @@ def render_v3(target: Image.Image, enhance: bool = True) -> Image.Image:
         enhancer = ImageEnhance.Brightness(base)
         base = enhancer.enhance(1.4)
         enhancer = ImageEnhance.Color(base)
-        base = enhancer.enhance(1.4)
+        base = enhancer.enhance(1.2)
     return base
 
 
@@ -186,5 +186,5 @@ def render_v1(target: Image.Image, enhance: bool = True) -> Image.Image:
         enhancer = ImageEnhance.Brightness(base)
         base = enhancer.enhance(1.4)
         enhancer = ImageEnhance.Color(base)
-        base = enhancer.enhance(1.4)
+        base = enhancer.enhance(1.2)
     return base
