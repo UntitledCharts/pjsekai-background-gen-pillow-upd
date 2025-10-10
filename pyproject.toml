@@ -1,6 +1,6 @@
 [project]
 name = "pjsk_background_gen_PIL"
-version = "0.1.4"
+version = "0.1.5"
 description = "pjsekai_background_gen_rust but converted back to Python and Pillow (for v3 background stage support)."
 readme = "README.md"
 requires-python = ">=3.8"
